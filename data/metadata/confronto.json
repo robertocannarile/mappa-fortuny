@@ -1,0 +1,154 @@
+{
+ "titolo": "Archivio Tessuti Fortuny",
+ "cosa": "tessuti",
+ "n": 652,
+ "gruppo": "tipologia",
+ "gruppi": 10,
+ "misure": {
+  "inception": {
+   "stessa_tipologia": 61.5,
+   "differenza_colore": null,
+   "differenza_anni": 2.6
+  },
+  "siglip": {
+   "stessa_tipologia": 71.2,
+   "differenza_colore": null,
+   "differenza_anni": 1.3
+  },
+  "caso": {
+   "stessa_tipologia": 17.6
+  }
+ },
+ "accordo": {
+  "inception-siglip": 34.8
+ },
+ "k": 10,
+ "esempi": [
+  {
+   "idx": 158,
+   "vicini": {
+    "inception": [
+     170,
+     78,
+     229,
+     64,
+     202,
+     261
+    ],
+    "siglip": [
+     78,
+     170,
+     166,
+     179,
+     131,
+     202
+    ]
+   }
+  },
+  {
+   "idx": 6,
+   "vicini": {
+    "inception": [
+     9,
+     140,
+     97,
+     83,
+     8,
+     238
+    ],
+    "siglip": [
+     9,
+     7,
+     8,
+     277,
+     393,
+     23
+    ]
+   }
+  },
+  {
+   "idx": 164,
+   "vicini": {
+    "inception": [
+     87,
+     311,
+     312,
+     271,
+     211,
+     134
+    ],
+    "siglip": [
+     312,
+     87,
+     259,
+     134,
+     360,
+     210
+    ]
+   }
+  },
+  {
+   "idx": 100,
+   "vicini": {
+    "inception": [
+     200,
+     203,
+     309,
+     156,
+     222,
+     361
+    ],
+    "siglip": [
+     317,
+     144,
+     203,
+     16,
+     224,
+     334
+    ]
+   }
+  },
+  {
+   "idx": 443,
+   "vicini": {
+    "inception": [
+     440,
+     437,
+     442,
+     441,
+     436,
+     33
+    ],
+    "siglip": [
+     491,
+     440,
+     297,
+     437,
+     436,
+     295
+    ]
+   }
+  },
+  {
+   "idx": 600,
+   "vicini": {
+    "inception": [
+     615,
+     617,
+     581,
+     573,
+     614,
+     618
+    ],
+    "siglip": [
+     616,
+     581,
+     608,
+     617,
+     640,
+     635
+    ]
+   }
+  }
+ ]
+}

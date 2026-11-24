@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="it">
+<head>
+    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Confronto modelli</title>
+
+<style>
+  :root {
+    --ink: #1d1d1f; --ink-48: #7a7a7a; --canvas: #fff; --parchment: #f5f5f7; --hairline: #e0e0e0;
+    --primary: #FF505D;
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-tema="chiaro"]) { --ink: #fff; --ink-48: #a1a1a6; --canvas: #000; --parchment: #1c1c1e; --hairline: rgba(255,255,255,.14); }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--canvas); color: var(--ink); font: 400 15px/1.5 var(--font); -webkit-font-smoothing: antialiased; }
+  main { max-width: 1180px; margin: 0 auto; padding: 48px 24px 80px; }
+  h1 { font-size: 34px; line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 8px; font-weight: 700; }
+  h2 { font-size: 21px; margin: 56px 0 6px; font-weight: 700; letter-spacing: -0.01em; }
+  .torna { display: inline-block; margin-bottom: 28px; color: var(--primary); font-weight: 600; text-decoration: none; font-size: 14px; }
+  .sotto { color: var(--ink-48); max-width: 70ch; margin: 0; }
+  .etichetta { color: var(--primary); font-weight: 600; font-size: 13px; text-transform: none; margin-bottom: 6px; }
+  .tre { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 24px; }
+  .modello { background: var(--parchment); border-radius: 14px; padding: 18px 18px 16px; }
+  .modello h3 { margin: 0 0 4px; font-size: 17px; }
+  .modello p { margin: 0; color: var(--ink-48); font-size: 13.5px; }
+  .modello a { display: inline-block; margin-top: 12px; color: var(--primary); font-weight: 600; font-size: 13.5px; text-decoration: none; }
+  table { width: 100%; border-collapse: collapse; margin-top: 18px; font-variant-numeric: tabular-nums; }
+  th, td { text-align: left; padding: 11px 12px; border-bottom: 1px solid var(--hairline); }
+  th { font-size: 13px; color: var(--ink-48); font-weight: 600; }
+  td.num { text-align: right; } th.num { text-align: right; }
+  td .barra { display: inline-block; height: 6px; border-radius: 3px; background: var(--primary); vertical-align: middle; margin-left: 10px; }
+  .migliore { font-weight: 700; }
+  .nota { color: var(--ink-48); font-size: 13px; margin-top: 10px; max-width: 80ch; }
+  .esempio { display: grid; grid-template-columns: 170px 1fr; gap: 20px; padding: 22px 0; border-bottom: 1px solid var(--hairline); align-items: start; }
+  .esempio .centro img { width: 170px; height: 170px; object-fit: cover; border-radius: 10px; display: block; }
+  .esempio .centro b { display: block; margin-top: 8px; font-size: 14px; line-height: 1.3; }
+  .esempio .centro span { color: var(--ink-48); font-size: 12.5px; }
+  .righe { display: grid; gap: 10px; }
+  .riga { display: grid; grid-template-columns: 82px 1fr; align-items: center; gap: 10px; }
+  .riga .nome { font-size: 13px; font-weight: 600; }
+  .miniature { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; }
+  .miniature figure { margin: 0; position: relative; }
+  .miniature img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 6px; display: block; }
+  .miniature figcaption { font-size: 10.5px; color: var(--ink-48); line-height: 1.25; margin-top: 3px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+  .miniature figure.uguale img { box-shadow: 0 0 0 2px var(--primary); }
+  .vuoto { color: var(--ink-48); padding: 40px 0; }
+  @media (max-width: 760px) {
+    .tre { grid-template-columns: 1fr; }
+    .esempio { grid-template-columns: 1fr; }
+    .riga { grid-template-columns: 1fr; }
+    .miniature { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>
+</head>
+<body>
+<main>
+  <a class="torna" href="./?variant=C">← Torna alla mappa</a>
+  <div class="etichetta" id="etichetta">&nbsp;</div>
+  <h1 id="titolo">Tre modi di guardare</h1>
+  <p class="sotto" id="intro">La mappa mette vicini gli elementi che un modello considera simili. Ogni modello ha imparato a guardare in modo diverso: qui li confrontiamo sugli stessi dati, con gli stessi parametri.</p>
+
+  <div class="tre">
+    <div class="modello"><h3>Inception V3</h3><p>Google, 2015. Addestrato a riconoscere 1.000 categorie di oggetti (ImageNet). Vede soprattutto trama, colore, densità del motivo. È quello di PixPlot.</p><a href="./?variant=C&amp;modello=inception">Apri la mappa →</a></div>
+    <div class="modello"><h3>CLIP ViT-L/14</h3><p>OpenAI, 2021. Ha imparato da 400 milioni di immagini con le loro didascalie: lega l'aspetto al significato (animali, stemmi, stili).</p><a href="./?variant=C&amp;modello=clip">Apri la mappa →</a></div>
+    <div class="modello"><h3>SigLIP 2</h3><p>Google, 2025. Stessa idea di CLIP, addestramento più recente e più fine sui dettagli; legge le immagini a risoluzione più alta.</p><a href="./?variant=C&amp;modello=siglip">Apri la mappa →</a></div>
+  </div>
+
+  <h2>Misure</h2>
+  <p class="sotto" id="misure-intro">Per ogni elemento si prendono i 10 più simili secondo il modello e si controlla quanto gli somigliano davvero.</p>
+  <table id="misure"></table>
+  <p class="nota" id="nota"></p>
+
+  <h2>Quanto sono d'accordo</h2>
+  <p class="sotto" id="accordo-intro">Sui 10 "più simili", quanti ne indicano in comune due modelli.</p>
+  <table id="accordo"></table>
+
+  <h2>Esempi</h2>
+  <p class="sotto" id="esempi-intro">Lo stesso elemento e i 6 più simili secondo ciascun modello. Con il bordo colorato quelli indicati da tutti i modelli.</p>
+  <div id="esempi"><div class="vuoto">Caricamento…</div></div>
+</main>
+<script>
+(function() {
+  var NOMI = { inception: 'Inception', clip: 'CLIP', siglip: 'SigLIP 2' };
+  function el(tag, attr, figli) {
+    var e = document.createElement(tag);
+    for (var k in attr || {}) k === 'text' ? e.textContent = attr[k] : e.setAttribute(k, attr[k]);
+    (figli || []).forEach(function(f) { if (f) e.appendChild(f); });
+    return e;
+  }
+  Promise.all([
+    fetch('data/manifest.json').then(function(r) { return r.json(); }),
+    fetch('data/metadata/confronto.json').then(function(r) { if (!r.ok) throw new Error(); return r.json(); }),
+    fetch('data/metadata/ricerca.json').then(function(r) { return r.json(); }),
+  ]).then(function(d) {
+    var lista = d[0].imagelist.split('/').pop();
+    return fetch('data/imagelists/' + lista).then(function(r) { return r.json(); }).then(function(l) { disegna(l.images, d[1], d[2]); });
+  }).catch(function() {
+    document.getElementById('esempi').innerHTML = '<div class="vuoto">Il confronto non è ancora pronto: va creato con script/embedding_modelli.py.</div>';
+  });
+
+  function disegna(immagini, c, schede) {
+    var modelli = Object.keys(c.misure).filter(function(m) { return m !== 'caso'; });
+
+    var cosa = c.cosa || 'tessuti', uno = cosa === 'tessuti' ? 'tessuto' : 'immagine', gruppo = c.gruppo || 'tipologia',
+        n = (c.n || immagini.length).toLocaleString('it-IT'), colore = modelli.some(function(m) { return c.misure[m].differenza_colore != null; });
+    document.title = 'Confronto modelli · ' + (c.titolo || 'Archivio Tessuti Fortuny');
+    document.getElementById('etichetta').textContent = (c.titolo || 'Archivio Tessuti Fortuny') + ' · ' + n + ' ' + cosa;
+    document.getElementById('titolo').textContent = 'Tre modi di guardare ' + (cosa === 'tessuti' ? 'i tessuti' : 'le immagini');
+    document.getElementById('intro').textContent = 'La mappa mette vicini ' + (cosa === 'tessuti' ? 'i tessuti' : 'le immagini') +
+      ' che un modello considera simili. Ogni modello ha imparato a guardare in modo diverso: qui li confrontiamo sugli stessi ' +
+      n + ' ' + cosa + ', con gli stessi parametri.';
+    document.getElementById('misure-intro').textContent = 'Per ogni ' + uno + ' si prendono i 10 più simili secondo il modello e si controlla quanto gli somigliano davvero.';
+    document.getElementById('nota').textContent = 'Stessa ' + gruppo + ': quanti dei 10 sono della stessa ' + gruppo +
+      (gruppo === 'tipologia' ? ' (classico, damasco, floreale…)' : ' (' + (c.gruppi || '') + ' collezioni in tutto)') +
+      '; "a caso" è quanto si otterrebbe pescando a caso.' +
+      (colore ? ' Differenza di colore: distanza media tra i colori medi (ΔE in CIELAB, più bassa = più simili nel colore).' : '') +
+      ' Differenza di anni: scarto medio di datazione, solo dove la data c\'è.';
+    document.getElementById('esempi-intro').textContent = 'La stessa ' + (cosa === 'tessuti' ? 'scheda' : 'immagine') +
+      ' e le 6 più simili secondo ciascun modello. Con il bordo colorato quelle indicate da tutti i modelli.';
+    // misure
+    var t = document.getElementById('misure');
+    t.appendChild(el('tr', {}, [el('th', { text: 'Modello' }), el('th', { class: 'num', text: 'Stessa ' + gruppo }),
+      colore ? el('th', { class: 'num', text: 'Differenza di colore' }) : null, el('th', { class: 'num', text: 'Differenza di anni' })]));
+    var best = {
+      t: Math.max.apply(null, modelli.map(function(m) { return c.misure[m].stessa_tipologia; })),
+      c: Math.min.apply(null, modelli.map(function(m) { return c.misure[m].differenza_colore; })),
+      a: Math.min.apply(null, modelli.map(function(m) { return c.misure[m].differenza_anni; })),
+    };
+    modelli.forEach(function(m) {
+      var x = c.misure[m], tip = el('td', { class: 'num' + (x.stessa_tipologia === best.t ? ' migliore' : '') });
+      tip.textContent = x.stessa_tipologia + '%';
+      tip.appendChild(el('span', { class: 'barra', style: 'width:' + Math.round(x.stessa_tipologia) + 'px' }));
+      t.appendChild(el('tr', {}, [el('td', { text: NOMI[m] || m }), tip,
+        colore ? el('td', { class: 'num' + (x.differenza_colore === best.c ? ' migliore' : ''), text: x.differenza_colore }) : null,
+        el('td', { class: 'num' + (x.differenza_anni === best.a ? ' migliore' : ''), text: x.differenza_anni + ' anni' })]));
+    });
+    var caso = el('td', { class: 'num', text: c.misure.caso.stessa_tipologia + '%' });
+    caso.appendChild(el('span', { class: 'barra', style: 'opacity:.3;width:' + Math.round(c.misure.caso.stessa_tipologia) + 'px' }));
+    t.appendChild(el('tr', {}, [el('td', { text: 'a caso (riferimento)' }), caso, colore ? el('td', { class: 'num', text: '—' }) : null, el('td', { class: 'num', text: '—' })]));
+    // accordo
+    var a = document.getElementById('accordo');
+    a.appendChild(el('tr', {}, [el('th', { text: 'Coppia' }), el('th', { class: 'num', text: 'In comune su 10' })]));
+    Object.keys(c.accordo).forEach(function(k) {
+      var p = k.split('-');
+      a.appendChild(el('tr', {}, [el('td', { text: (NOMI[p[0]] || p[0]) + ' e ' + (NOMI[p[1]] || p[1]) }), el('td', { class: 'num', text: c.accordo[k] + '%' })]));
+    });
+    // esempi
+    var box = document.getElementById('esempi');
+    box.innerHTML = '';
+    c.esempi.forEach(function(e) {
+      var s = schede[e.idx] || [], tutti = null;
+      modelli.forEach(function(m) {
+        var v = e.vicini[m] || [];
+        tutti = tutti === null ? v.slice() : tutti.filter(function(i) { return v.indexOf(i) !== -1; });
+      });
+      var righe = el('div', { class: 'righe' }, modelli.map(function(m) {
+        return el('div', { class: 'riga' }, [el('div', { class: 'nome', text: NOMI[m] || m }),
+          el('div', { class: 'miniature' }, (e.vicini[m] || []).map(function(i) {
+            return el('figure', { class: tutti.indexOf(i) !== -1 ? 'uguale' : '' }, [
+              el('img', { src: 'data/thumbs/' + immagini[i], alt: '', loading: 'lazy' }),
+              el('figcaption', { text: (schede[i] || [])[0] || '' })]);
+          }))]);
+      }));
+      box.appendChild(el('div', { class: 'esempio' }, [
+        el('div', { class: 'centro' }, [el('img', { src: 'data/thumbs/' + immagini[e.idx], alt: '' }),
+          el('b', { text: s[0] || '' }), el('span', { text: [s[2], /^(image|text)$/i.test(s[3] || '') ? (s[4] || '').split('|')[0] : s[3]].filter(Boolean).join(' · ') })]),
+        righe]));
+    });
+  }
+})();
+</script>
+</body>
+</html>

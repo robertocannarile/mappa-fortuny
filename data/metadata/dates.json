@@ -1,0 +1,57 @@
+{
+    "domain": {
+        "min": 1900,
+        "max": 1955
+    },
+    "dates": {
+        "1955": [
+            "5154_olimpia_yellow-white.jpg",
+            "5252_olimpia_yellow-white-texture.jpg",
+            "5393_olimpia_green-silvery-gold.jpg"
+        ],
+        "1900": [
+            "5476_moresco_green-warm-white.jpg",
+            "5501_moresco_bittersweet-warm-white.jpg",
+            "5710_moresco_platinum-monotones.jpg",
+            "5711_moresco_turkish-blue-navy.jpg",
+            "5762_moresco_black-gold.jpg",
+            "5870_moresco_faded-rose-gold.jpg",
+            "5871_moresco_vintage-blue-green-gold.jpg",
+            "5872_moresco_ochre-gold.jpg",
+            "ff-8011_moresco_whippet-silvery-gold.jpg",
+            "ff-8012_moresco_laguna-silvery-gold.jpg"
+        ],
+        "1933": [
+            "5890_laotze_deep-jade-gold.jpg",
+            "5891_laotze_midnight-fog.jpg",
+            "5892_laotze_mare-monotones.jpg",
+            "5893_laotze_oxblood-spice-gold.jpg",
+            "5894_laotze_plum-fog-gold.jpg"
+        ],
+        "1930": [
+            "5900_tzin_plum-fog-aluminum.jpg",
+            "5901_tzin_mare-vintage-rose.jpg",
+            "5902_tzin_smoke-aluminium.jpg",
+            "5903_tzin_deep-carmine-vintage-rose.jpg"
+        ],
+        "1940": [
+            "5930_arboreto_spruce-pale-blue.jpg",
+            "5931_arboreto_arctic-monotones.jpg",
+            "5932_arboreto_clay-silvery-gold.jpg",
+            "5933_arboreto_burnt-peach-silvery-gold.jpg",
+            "5934_arboreto_pine-gold-texture.jpg"
+        ],
+        "1921": [
+            "5960_archipelago_faded-blue-silver.jpg",
+            "5961_archipelago_mercury-silver.jpg",
+            "5962_archipelago_goldenrod-gold.jpg",
+            "5965_archipelago_clay-silvery-gold.jpg"
+        ],
+        "1920": [
+            "5990_giudecca_mattone-monotones-gold-texture.jpg",
+            "5991_giudecca_palanca-pink-silver.jpg",
+            "5992_giudecca_noir-monotones-silver.jpg",
+            "5993_giudecca_shadow-limestone.jpg"
+        ]
+    }
+}
