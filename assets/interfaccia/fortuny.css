@@ -43,7 +43,7 @@ body.var-C .inclina-btn { right: 76px; }
 body.inclina-attivo #pixplot-canvas { cursor: grab; }
 body.inclina-attivo #pixplot-canvas:active { cursor: grabbing; }
 
-body.opzioni-c-aperte .inclina-btn, body.opzioni-c-aperte .modello-gruppo, body.opzioni-c-aperte .modello-menu { opacity: 0; pointer-events: none; transition: opacity .2s ease; }
+body.opzioni-c-aperte .inclina-btn, body.opzioni-c-aperte .vista-btn { opacity: 0; pointer-events: none; transition: opacity .2s ease; }
 
 
 .modello-gruppo { position: fixed; z-index: 30; top: 14px; right: 76px; display: flex; gap: 6px; align-items: center; }
@@ -72,6 +72,17 @@ body.var-C .modello-gruppo, body.var-C .modello-menu { right: 134px; }
 .modello-riga.scelto .spunta { background: var(--primary); box-shadow: inset 0 0 0 4px var(--canvas); outline: 1.5px solid var(--primary); }
 .modello-riga.manca { opacity: .4; cursor: default; }
 .modello-riga.manca .testo small::after { content: ' · in preparazione'; }
+
+
+.vista-btn { position: fixed; z-index: 30; top: 14px; right: 76px; display: flex; align-items: center; gap: 8px; height: 48px;
+  padding: 0 16px 0 12px; border: 0; border-radius: 999px; color: var(--ink); font: 400 14px/1 var(--font-apple); cursor: pointer;
+  transition: right .3s ease; }
+body.var-C .vista-btn { right: 134px; }
+body.in-nuvola .vista-btn { right: 18px; }
+body.var-C.in-nuvola .vista-btn { right: 76px; }
+.vista-btn b { font-weight: 600; }
+.vista-btn .mini { width: 20px; height: 20px; }
+.vista-btn.acceso { background: var(--primary) !important; color: var(--on-primary); }
 
 
 #solo-barra { display: none !important; }
